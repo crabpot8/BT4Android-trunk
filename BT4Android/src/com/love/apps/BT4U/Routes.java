@@ -34,9 +34,9 @@ import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
+import com.love.apps.BT4U.datastructures.ScheduledDeparture;
+import com.love.apps.BT4U.datastructures.ScheduledStop;
 import com.love.apps.BT4U.webservice.BT4U;
-import com.love.apps.BT4U.webservice.ScheduledDeparture;
-import com.love.apps.BT4U.webservice.ScheduledStop;
 import com.love.qsort.MyQsort;
 
 public class Routes extends SherlockFragment {

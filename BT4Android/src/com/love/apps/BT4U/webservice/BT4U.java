@@ -18,6 +18,11 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import com.love.apps.BT4U.datastructures.Bus;
+import com.love.apps.BT4U.datastructures.BusStop;
+import com.love.apps.BT4U.datastructures.Route;
+import com.love.apps.BT4U.datastructures.ScheduledDeparture;
+import com.love.apps.BT4U.datastructures.ScheduledStop;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.mapper.MapperWrapper;

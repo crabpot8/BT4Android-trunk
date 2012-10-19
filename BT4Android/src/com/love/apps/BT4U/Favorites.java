@@ -39,8 +39,8 @@ import com.actionbarsherlock.app.SherlockListFragment;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
+import com.love.apps.BT4U.datastructures.ScheduledDeparture;
 import com.love.apps.BT4U.webservice.BT4U;
-import com.love.apps.BT4U.webservice.ScheduledDeparture;
 
 public class Favorites extends SherlockListFragment {
 

@@ -1,4 +1,4 @@
-package com.love.apps.BT4U.webservice;
+package com.love.apps.BT4U.datastructures;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 

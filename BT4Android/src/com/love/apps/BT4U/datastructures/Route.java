@@ -1,4 +1,4 @@
-package com.love.apps.BT4U.webservice;
+package com.love.apps.BT4U.datastructures;
 
 import java.util.ArrayList;
 
@@ -9,8 +9,6 @@ import java.util.ArrayList;
  * 
  */
 public class Route {
-	
-	protected Route() {}
 	
 	/** A human-readable, non-standard name for the route such as 'University City via Progress' */ 
 	public String routeName;

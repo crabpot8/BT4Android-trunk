@@ -1,4 +1,4 @@
-package com.love.apps.BT4U.webservice;
+package com.love.apps.BT4U.datastructures;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
@@ -50,7 +50,7 @@ public class ScheduledDeparture {
 	private String TripID;
 	private String TripStartTime;
 
-	protected void cleanup() {
+	public void cleanup() {
 		RouteShortName = null;
 		PatternPointName = null;
 		ServiceLevelID = null;

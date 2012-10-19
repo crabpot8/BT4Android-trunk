@@ -2,11 +2,11 @@ package com.love.apps.BT4U.cache;
 
 import java.util.List;
 
-import com.love.apps.BT4U.webservice.Bus;
-import com.love.apps.BT4U.webservice.BusStop;
-import com.love.apps.BT4U.webservice.Route;
-import com.love.apps.BT4U.webservice.ScheduledDeparture;
-import com.love.apps.BT4U.webservice.ScheduledStop;
+import com.love.apps.BT4U.datastructures.Bus;
+import com.love.apps.BT4U.datastructures.BusStop;
+import com.love.apps.BT4U.datastructures.Route;
+import com.love.apps.BT4U.datastructures.ScheduledDeparture;
+import com.love.apps.BT4U.datastructures.ScheduledStop;
 
 /**
  * An empty class for cache results. Does nothing by default, users can subclass
