@@ -1,66 +1,38 @@
 package com.love.apps.BT4U.cache;
 
-import java.util.HashMap;
-import java.util.Map.Entry;
-
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.love.apps.BT4U.datastructures.Bus;
-
 public class CacheDB extends SQLiteOpenHelper {
 
 	private static final int DATABASE_VERSION = 1;
-	
-	HashMap<String, Class<? extends Cacheable>> tables = new HashMap<String, Class<? extends Cacheable>>();
 
 	public CacheDB(Context context) {
 		super(context, "BT4U", null, DATABASE_VERSION);
-
-		tables.put("bus", Bus.class);
 	}
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 
-		for (String tableName : tables.keySet()) {
-			Class<? extends Cacheable> c = tables.get(tableName);
-			try {
-				Cacheable object = c.newInstance();
-				db.execSQL(object.getCreateTableSQL(tableName));
-			} catch (InstantiationException e) {
-				e.printStackTrace();
-			} catch (IllegalAccessException e) {
-				e.printStackTrace();
-			}
-		}
+		StringBuffer b = new StringBuffer("CREATE TABLE cache (");
+		b.append("id          INTEGER,");
+		b.append("resultTime  INTEGER,");
+		b.append("requestType TEXT,");
+		b.append("paramOne    TEXT,");
+		b.append("paramTwo    TEXT,");
+		b.append("paramThree  TEXT,");
+		b.append("response    TEXT");
+		b.append(");");
 
+		db.execSQL(b.toString());
 	}
+	
+	
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		for (String tableName : tables.keySet())
-			db.execSQL("DROP TABLE " + tableName);
-
+		db.execSQL("DROP TABLE cache");
 		onCreate(db);
-	}
-	
-	public void insert(Cacheable data) {
-		Class<? extends Cacheable> c = data.getClass();
-		String tableName = "";
-		for (Entry<String, Class<? extends Cacheable>> entry : tables.entrySet()) {
-			if (entry.getValue().isInstance(data))
-			{
-				tableName = entry.getKey();
-				break;
-			}
-		}
-		
-		// TODO check tablename is not null
-		
-		SQLiteDatabase db = getWritableDatabase();
-		db.insert(tableName, null, data.getDatabaseInsert());
-		db.close();
 	}
 }
