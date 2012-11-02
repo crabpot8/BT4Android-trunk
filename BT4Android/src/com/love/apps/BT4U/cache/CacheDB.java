@@ -12,9 +12,7 @@ import com.love.apps.BT4U.datastructures.Bus;
 public class CacheDB extends SQLiteOpenHelper {
 
 	private static final int DATABASE_VERSION = 1;
-
-	// Object[][] table = {{"bus", Bus.class}, {"bus", Bus.class}};
-
+	
 	HashMap<String, Class<? extends Cacheable>> tables = new HashMap<String, Class<? extends Cacheable>>();
 
 	public CacheDB(Context context) {
@@ -47,8 +45,6 @@ public class CacheDB extends SQLiteOpenHelper {
 
 		onCreate(db);
 	}
-
-	// black, small light jacket long sleeves, hood, similar to hoodie. stretchy black cottony fabric. Look in sherry's room or in the kitchen on the loveseat   
 	
 	public void insert(Cacheable data) {
 		Class<? extends Cacheable> c = data.getClass();

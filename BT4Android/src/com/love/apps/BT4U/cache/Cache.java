@@ -10,6 +10,7 @@ import com.love.apps.BT4U.datastructures.BusStop;
 import com.love.apps.BT4U.datastructures.Route;
 import com.love.apps.BT4U.datastructures.ScheduledDeparture;
 import com.love.apps.BT4U.datastructures.ScheduledStop;
+import com.love.apps.BT4U.webservice.BT4U;
 
 public class Cache {
 	private Context mContext;
@@ -21,6 +22,9 @@ public class Cache {
 	public CacheResult<List<Bus>> getRunningBuses(BaseCacheListener callback) {
 		CacheWorker cw = new CacheWorker(mContext);
 
+		// Check DB for current data
+		
+		
 		if (callback != null) {
 			WebRequest request = new WebRequest(TYPE.RunningBuses);
 			request.setCallback(callback);
