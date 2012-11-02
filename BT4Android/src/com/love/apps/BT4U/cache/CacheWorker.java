@@ -16,7 +16,7 @@ import com.love.apps.BT4U.webservice.BT4U;
  * @author hamiltont
  * 
  */
-public class CacheWorker extends AsyncTask<WebRequest, Void, CacheResult> {
+public class CacheWorker extends AsyncTask<CacheRequest, Void, CacheResult> {
 
 	private Context mContext;
 
@@ -25,9 +25,9 @@ public class CacheWorker extends AsyncTask<WebRequest, Void, CacheResult> {
 	}
 
 	@Override
-	protected CacheResult doInBackground(WebRequest... params) {
+	protected CacheResult doInBackground(CacheRequest... params) {
 
-		WebRequest request = params[0];
+		CacheRequest request = params[0];
 
 		// Get result from web
 		CacheResult result = getResult(request);
@@ -42,7 +42,7 @@ public class CacheWorker extends AsyncTask<WebRequest, Void, CacheResult> {
 		return result;
 	}
 
-	private CacheResult getResult(WebRequest request) {
+	private CacheResult getResult(CacheRequest request) {
 		BT4U webservice = BT4U.getService();
 		CacheResult result = new CacheResult();
 
@@ -59,7 +59,7 @@ public class CacheWorker extends AsyncTask<WebRequest, Void, CacheResult> {
 
 			}
 
-			result.ageInMilliseconds = System.currentTimeMillis();
+			result.age = System.currentTimeMillis();
 			return result;
 		} catch (Exception e) {
 			e.printStackTrace();
